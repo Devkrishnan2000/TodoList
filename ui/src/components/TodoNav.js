@@ -1,13 +1,25 @@
 import { useEffect, useState } from "react";
-import { Button, NavLink } from "react-bootstrap";
+import { Button, NavLink, OverlayTrigger, Tooltip } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import { Outlet, useNavigate } from "react-router-dom";
 import { getUserDetails } from "../util/apiCalls";
+import { BoxArrowLeft, Gear } from "react-bootstrap-icons";
 // navbar component
 function TodoNav() {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
+
+  const renderLogoutTooltip = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+      Logout
+    </Tooltip>
+  );
+  const renderSettingsTooltip = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+      Settings
+    </Tooltip>
+  );
 
   useEffect(() => {
     if (!localStorage.getItem("loggedIn")) {
@@ -23,7 +35,6 @@ function TodoNav() {
   };
   const setName = async () => {
     const userdetails = await getUserDetails();
-    console.log(userdetails.data);
     setUsername(userdetails.data.first_name + " " + userdetails.data.last_name);
   };
   return (
@@ -34,15 +45,30 @@ function TodoNav() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <NavLink className="ms-auto text-light">Hello, {username}</NavLink>
-            <Button
-              variant="dark"
-              className="ms-3"
-              onClick={() => {
-                logout();
-              }}
+            <OverlayTrigger
+              placement="bottom"
+              delay={{ show: 250, hide: 400 }}
+              overlay={renderLogoutTooltip}
             >
-              Log out
-            </Button>
+              <Button
+                variant="dark"
+                className="ms-3"
+                onClick={() => {
+                  logout();
+                }}
+              >
+                <BoxArrowLeft></BoxArrowLeft>
+              </Button>
+            </OverlayTrigger>
+            <OverlayTrigger
+              placement="bottom"
+              delay={{ show: 250, hide: 400 }}
+              overlay={renderSettingsTooltip}
+            >
+              <Button variant="dark" className="ms-3" onClick={() => {}}>
+                <Gear></Gear>
+              </Button>
+            </OverlayTrigger>
           </Navbar.Collapse>
         </Container>
       </Navbar>

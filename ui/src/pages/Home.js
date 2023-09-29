@@ -5,6 +5,9 @@ import { Button, Col } from "react-bootstrap";
 import TaskModal from "../components/TaskModal";
 import Pagination from "react-bootstrap/Pagination";
 import Dropdown from "react-bootstrap/Dropdown";
+import { Pencil } from "react-bootstrap-icons";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 function Home() {
   const [taskList, setTaskList] = useState([]);
   const [modalShow, setModalShow] = useState(false);
@@ -15,6 +18,7 @@ function Home() {
   const [reload,setreload] = useState(0)
 
   useEffect(() => {
+    AOS.init();
     getTasks(1); // load the first page of tasks
   }, [reload,]);
 
@@ -70,11 +74,12 @@ function Home() {
     <div className="m-3">
       <div className="d-flex align-items-center">
         <Button
-          className="m-3"
+          className="m-3 text-light"
           onClick={() => {
             setModalShow(true);
           }}
         >
+          <Pencil className="me-2"></Pencil>
           Create Task
         </Button>
         <Dropdown>
@@ -118,7 +123,7 @@ function Home() {
         {taskList ? ( //checks if tasklist empty or not
           taskList.length > 0 ? (
             taskList.map((task) => (
-              <Col key={task.id}>
+              <Col key={task.id} data-aos="zoom-in">
                 <TaskCard
                   key={task.id}
                   task={task}

@@ -64,7 +64,7 @@ function Login() {
           <Form.Group className="mb-3" controlId="username">
             <Form.Label>Username</Form.Label>
             <Form.Control
-              type="text"
+              type="email"
               placeholder="Enter username"
               value={username.value}
               onChange={(e) => setUsername(e.target.value)}
@@ -86,20 +86,26 @@ function Login() {
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
+             
               <InputGroup.Text
                 id="basic-addon1"
                 onClick={() => {
                   showPassword ? setShowPassword(false) : setShowPassword(true);
                 }}
+                
               >
-                {showPassword?<EyeSlash></EyeSlash>:<Eye></Eye>}
+                {showPassword ? <EyeSlash></EyeSlash> : <Eye></Eye>}
               </InputGroup.Text>
+              <Form.Control.Feedback type="invalid">
+                Please provide a valid Password.
+              </Form.Control.Feedback>
             </InputGroup>
-            <Form.Control.Feedback type="invalid">
-              Please provide a valid Password.
-            </Form.Control.Feedback>
           </Form.Group>
-          <Button variant="primary" className="d-block mb-2" type="submit">
+          <Button
+            variant="primary"
+            className="d-block mb-2 text-light"
+            type="submit"
+          >
             Submit
           </Button>
           <Link to="/register">New ? Create an Account</Link>

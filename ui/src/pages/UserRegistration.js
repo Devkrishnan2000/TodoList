@@ -13,6 +13,7 @@ import Modal from "react-bootstrap/Modal";
 function UserRegistration() {
   const navigate = useNavigate();
   useEffect(() => {
+    
     if (localStorage.getItem("loggedIn") === "1") {
       navigate("/home"); // if user already logged in then redirect to home page
     }
@@ -146,9 +147,7 @@ function UserRegistration() {
                 }}
                 required
               />
-              <Form.Control.Feedback type="invalid">
-                Please choose a valid password.
-              </Form.Control.Feedback>
+
               <InputGroup.Text
                 id="inputGroupPrepend"
                 onClick={() => {
@@ -156,6 +155,9 @@ function UserRegistration() {
                 }}
               >
                 {showPassword ? <EyeSlash></EyeSlash> : <Eye></Eye>}
+                <Form.Control.Feedback type="invalid">
+                  Please choose a valid password.
+                </Form.Control.Feedback>
               </InputGroup.Text>
             </InputGroup>
           </Form.Group>
