@@ -43,4 +43,13 @@ class UserDetailsViewSerializer(serializers.ModelSerializer):
         model = User
         fields = ["first_name","last_name"]
         ordering = ["id"]
+class UserLoginSerializer(serializers.ModelSerializer):
+    username = serializers.CharField(max_length=30)
+    password = serializers.CharField(max_length=30)
+    
+    class Meta:
+        model = User
+        fields = ["username","password"]
+        ordering = ["id"]
+            
     

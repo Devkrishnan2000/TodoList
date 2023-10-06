@@ -3,9 +3,9 @@ import Form from "react-bootstrap/Form";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../util/apiCalls";
-import Modal from "react-bootstrap/Modal";
 import { Container, Card, InputGroup } from "react-bootstrap";
 import { Eye, EyeSlash } from "react-bootstrap-icons";
+import ErrorModal from "../components/ErrorModal";
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -86,13 +86,12 @@ function Login() {
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
-             
+
               <InputGroup.Text
                 id="basic-addon1"
                 onClick={() => {
                   showPassword ? setShowPassword(false) : setShowPassword(true);
                 }}
-                
               >
                 {showPassword ? <EyeSlash></EyeSlash> : <Eye></Eye>}
               </InputGroup.Text>
@@ -112,19 +111,12 @@ function Login() {
         </Form>
       </Card>
 
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Incorrect User Credentials</Modal.Title>
-        </Modal.Header>
-        <Modal.Body className="text-danger">
-          Your username or password is Incorrect
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-        </Modal.Footer>
-      </Modal>
+      <ErrorModal
+        show={show}
+        handleClose={handleClose}
+        title="Login Failed !"
+        body="Invalid login credentials"
+      ></ErrorModal>
     </Container>
   );
 }

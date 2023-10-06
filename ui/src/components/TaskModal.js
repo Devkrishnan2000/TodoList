@@ -3,11 +3,18 @@ import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import { useState } from "react";
 import { createTask, updateTask } from "../util/apiCalls";
+import ErrorModal from "./ErrorModal";
 
 function TaskModal(props) {
   const [taskName, setTaskName] = useState("");
   const [taskDesc, setTaskDesc] = useState("");
   const [validated, setValidated] = useState(false);
+
+  const [show, setShow] = useState(false);
+  const [title,setitle] = useState("");
+  const [body,setbody] = useState("");
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -32,18 +39,21 @@ function TaskModal(props) {
       task_name: taskName,
       task_desc: taskDesc,
       version: props.task.version,
+      id : props.task.id
     };
     let result = await updateTask(props.task.id, updateTaskDetails);
     if (result.status) {
       props.reloadTask(props.curPage,props.task_status); //reloads tasks and displays current page
       clearForm();
       props.onHide(); //hides the modal
-    } else if (result.data === "Version Mismatch!") {
-      alert("Version misnatch please try again");
-      props.reloadTask(props.curPage,props.task_status); //reloads tasks and displays current page
-      clearForm();
-      props.onHide();
-    } else alert(result.data);
+    } 
+    else{
+      
+      setitle("Task Updation Failed !")
+      setbody(result.data)
+      handleShow();
+
+    } 
   };
   const clearForm = () => {
     setTaskName("");
@@ -61,7 +71,9 @@ function TaskModal(props) {
       props.onHide(); //hides the modal
       clearForm();
     } else {
-      alert(result.data);
+      setitle("Task Creation Failed !")
+      setbody(result.data)
+      handleShow();
     }
   };
   return (
@@ -126,6 +138,7 @@ function TaskModal(props) {
       <Modal.Footer>
         <Button onClick={props.onHide}>Close</Button>
       </Modal.Footer>
+      <ErrorModal show={show} handleClose={handleClose} body={body} title={title}></ErrorModal>
     </Modal>
   );
 }

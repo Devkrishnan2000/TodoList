@@ -50,7 +50,7 @@ export async function updateTask(taskId, taskDetails) {
 
       if (error.response.status === 400) {
         status = false;
-        data = "Input not in correct format";
+        data = error?.response?.data?.error[0][1][0];
       } else if (error.response.status === 409) {
         console.log(error.response.data);
         status = false;
@@ -77,10 +77,10 @@ export async function createTask(taskDetails) {
     .catch(function (error) {
       console.log(error);
       if (error.response.status === 400) {
-        console.log()
+        console.log();
         status = false;
         data = error?.response?.data?.error[0][1][0];
-      } 
+      }
     });
 
   return {
@@ -149,7 +149,7 @@ export async function getAcessToken() {
 export async function login(userCredentials) {
   let status;
   await axiosApi
-    .post("login/", userCredentials)
+    .post("user/login/", userCredentials)
     .then((result) => {
       localStorage.setItem("refresh_token", result.data.refresh);
       sessionStorage.setItem("access_token", result.data.access);

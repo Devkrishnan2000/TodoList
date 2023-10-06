@@ -1,24 +1,426 @@
+Watching for file changes with StatReloader
+"OPTIONS /todolist/update-task/29/ HTTP/1.1" 200 0
+Internal Server Error: /todolist/update-task/29/
+Traceback (most recent call last):
+  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/devkrishnan.va/Documents/Todolist_project/api/todolist/views.py", line 257, in put
+    if serialized.is_valid():
+  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/serializers.py", line 429, in run_validation
+    value = self.validate(value)
+  File "/home/devkrishnan.va/Documents/Todolist_project/api/todolist/serializer.py", line 23, in validate
+    userTasks = Task.objects.filter(user_id=attrs.get("user").id).values()
+AttributeError: 'NoneType' object has no attribute 'id'
+"PUT /todolist/update-task/29/ HTTP/1.1" 500 20692
+/home/devkrishnan.va/Documents/Todolist_project/api/todolist/serializer.py changed, reloading.
+Watching for file changes with StatReloader
+"PUT /todolist/update-task/29/ HTTP/1.1" 200 4
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 805
+"PUT /todolist/update-task/29/ HTTP/1.1" 200 4
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 801
+"OPTIONS /todolist/close-task/29/ HTTP/1.1" 200 0
+"PUT /todolist/close-task/29/ HTTP/1.1" 200 26
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 800
+/home/devkrishnan.va/Documents/Todolist_project/api/todolist/serializer.py changed, reloading.
+Watching for file changes with StatReloader
+"OPTIONS /todolist/delete-task/29/ HTTP/1.1" 200 0
+"DELETE /todolist/delete-task/29/ HTTP/1.1" 200 22
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 653
+"PUT /todolist/update-task/26/ HTTP/1.1" 200 4
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 643
+/home/devkrishnan.va/Documents/Todolist_project/api/todolist/serializer.py changed, reloading.
+Watching for file changes with StatReloader
+"PUT /todolist/update-task/26/ HTTP/1.1" 200 4
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 649
+"OPTIONS /todolist/delete-task/23/ HTTP/1.1" 200 0
+"DELETE /todolist/delete-task/23/ HTTP/1.1" 200 22
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 499
+"OPTIONS /todolist/delete-task/26/ HTTP/1.1" 200 0
+"DELETE /todolist/delete-task/26/ HTTP/1.1" 200 22
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 348
+"OPTIONS /todolist/delete-task/25/ HTTP/1.1" 200 0
+"DELETE /todolist/delete-task/25/ HTTP/1.1" 200 22
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 200
+"OPTIONS /todolist/delete-task/24/ HTTP/1.1" 200 0
+"DELETE /todolist/delete-task/24/ HTTP/1.1" 200 22
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 37
+"POST /todolist/create-task/ HTTP/1.1" 201 172
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 201
 Bad Request: /todolist/create-task/
-"POST /todolist/create-task/ HTTP/1.1" 400 81
-/home/devkrishnan.va/Documents/training/python_training/todolist/views.py changed, reloading.
+"POST /todolist/create-task/ HTTP/1.1" 400 94
+"POST /todolist/create-task/ HTTP/1.1" 201 175
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 353
+"OPTIONS /todolist/close-task/31/ HTTP/1.1" 200 0
+"PUT /todolist/close-task/31/ HTTP/1.1" 200 26
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 352
+"OPTIONS /todolist/update-task/31/ HTTP/1.1" 200 0
+"PUT /todolist/update-task/31/ HTTP/1.1" 200 4
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 363
+"PUT /todolist/update-task/31/ HTTP/1.1" 200 4
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 350
+"OPTIONS /todolist/delete-task/31/ HTTP/1.1" 200 0
+"DELETE /todolist/delete-task/31/ HTTP/1.1" 200 22
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 201
+/home/devkrishnan.va/Documents/Todolist_project/api/todolist/serializer.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /todolist/create-task/ HTTP/1.1" 201 174
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 352
+/home/devkrishnan.va/Documents/Todolist_project/api/todolist/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/devkrishnan.va/Documents/Todolist_project/api/todolist/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/devkrishnan.va/Documents/Todolist_project/api/todolist/serializer.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /todolist/create-task/ HTTP/1.1" 201 172
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 501
+"OPTIONS /todolist/update-task/32/ HTTP/1.1" 200 0
+Bad Request: /todolist/update-task/32/
+"PUT /todolist/update-task/32/ HTTP/1.1" 400 90
+"PUT /todolist/update-task/32/ HTTP/1.1" 200 4
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 501
+Bad Request: /todolist/update-task/32/
+"PUT /todolist/update-task/32/ HTTP/1.1" 400 90
+"PUT /todolist/update-task/32/ HTTP/1.1" 200 4
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 500
+Bad Request: /todolist/update-task/32/
+"PUT /todolist/update-task/32/ HTTP/1.1" 400 90
+/home/devkrishnan.va/Documents/Todolist_project/api/todolist/serializer.py changed, reloading.
+Watching for file changes with StatReloader
+/home/devkrishnan.va/Documents/Todolist_project/api/todolist/serializer.py changed, reloading.
+Watching for file changes with StatReloader
+/home/devkrishnan.va/Documents/Todolist_project/api/todolist/serializer.py changed, reloading.
+Watching for file changes with StatReloader
+/home/devkrishnan.va/Documents/Todolist_project/api/todolist/views.py changed, reloading.
+Watching for file changes with StatReloader
+"OPTIONS /todolist/update-task/33/ HTTP/1.1" 200 0
+"PUT /todolist/update-task/33/ HTTP/1.1" 200 4
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 499
+/home/devkrishnan.va/Documents/Todolist_project/api/todolist/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/devkrishnan.va/Documents/Todolist_project/api/todolist/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/devkrishnan.va/Documents/Todolist_project/api/todolist/serializer.py changed, reloading.
+Watching for file changes with StatReloader
+"PUT /todolist/update-task/33/ HTTP/1.1" 200 4
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 501
+"OPTIONS /todolist/close-task/33/ HTTP/1.1" 200 0
+"PUT /todolist/close-task/33/ HTTP/1.1" 200 26
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 500
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 500
+"GET /user/userdetails/ HTTP/1.1" 200 46
+"GET /user/userdetails/ HTTP/1.1" 200 46
+"PUT /todolist/update-task/33/ HTTP/1.1" 200 4
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 499
+/home/devkrishnan.va/Documents/Todolist_project/api/todolist/serializer.py changed, reloading.
+Watching for file changes with StatReloader
+/home/devkrishnan.va/Documents/Todolist_project/api/todolist/serializer.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /todolist/create-task/ HTTP/1.1" 201 171
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 647
+Bad Request: /todolist/create-task/
+"POST /todolist/create-task/ HTTP/1.1" 400 94
+Bad Request: /todolist/update-task/33/
+"PUT /todolist/update-task/33/ HTTP/1.1" 400 90
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 647
+"GET /user/userdetails/ HTTP/1.1" 200 46
+Bad Request: /todolist/update-task/33/
+"PUT /todolist/update-task/33/ HTTP/1.1" 400 90
+/home/devkrishnan.va/Documents/Todolist_project/api/todolist/serializer.py changed, reloading.
+Watching for file changes with StatReloader
+Bad Request: /todolist/update-task/33/
+"PUT /todolist/update-task/33/ HTTP/1.1" 400 90
+/home/devkrishnan.va/Documents/Todolist_project/api/todolist/serializer.py changed, reloading.
+Watching for file changes with StatReloader
+/home/devkrishnan.va/Documents/Todolist_project/api/todolist/serializer.py changed, reloading.
+Watching for file changes with StatReloader
+/home/devkrishnan.va/Documents/Todolist_project/api/todolist/serializer.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /todolist/create-task/ HTTP/1.1" 201 174
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 798
+"OPTIONS /todolist/close-task/35/ HTTP/1.1" 200 0
+"PUT /todolist/close-task/35/ HTTP/1.1" 200 26
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 797
+"OPTIONS /todolist/update-task/34/ HTTP/1.1" 200 0
+"PUT /todolist/update-task/34/ HTTP/1.1" 200 4
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 799
+/home/devkrishnan.va/Documents/Todolist_project/api/todolist/serializer.py changed, reloading.
+Watching for file changes with StatReloader
+/home/devkrishnan.va/Documents/Todolist_project/api/todolist/serializer.py changed, reloading.
+Watching for file changes with StatReloader
+/home/devkrishnan.va/Documents/Todolist_project/api/todolist/serializer.py changed, reloading.
+Watching for file changes with StatReloader
+/home/devkrishnan.va/Documents/Todolist_project/api/todolist/serializer.py changed, reloading.
+Watching for file changes with StatReloader
+/home/devkrishnan.va/Documents/Todolist_project/api/todolist/serializer.py changed, reloading.
+Watching for file changes with StatReloader
+/home/devkrishnan.va/Documents/Todolist_project/api/todolist/serializer.py changed, reloading.
+Watching for file changes with StatReloader
+/home/devkrishnan.va/Documents/Todolist_project/api/todolist/serializer.py changed, reloading.
+Watching for file changes with StatReloader
+/home/devkrishnan.va/Documents/Todolist_project/api/todolist/serializer.py changed, reloading.
+Watching for file changes with StatReloader
+/home/devkrishnan.va/Documents/Todolist_project/api/todolist/serializer.py changed, reloading.
+Watching for file changes with StatReloader
+/home/devkrishnan.va/Documents/Todolist_project/api/todolist/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/devkrishnan.va/Documents/Todolist_project/api/todolist/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/devkrishnan.va/Documents/Todolist_project/api/todolist/views.py changed, reloading.
 Watching for file changes with StatReloader
 Bad Request: /todolist/create-task/
-"POST /todolist/create-task/ HTTP/1.1" 400 81
-/home/devkrishnan.va/Documents/training/python_training/todolist/views.py changed, reloading.
+"POST /todolist/create-task/ HTTP/1.1" 400 94
+"POST /todolist/create-task/ HTTP/1.1" 201 176
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 952
+"OPTIONS /todolist/update-task/36/ HTTP/1.1" 200 0
+Internal Server Error: /todolist/update-task/36/
+Traceback (most recent call last):
+  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/home/devkrishnan.va/Documents/Todolist_project/api/todolist/views.py", line 258, in put
+    if serialized.is_valid():
+  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/serializers.py", line 227, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/serializers.py", line 426, in run_validation
+    value = self.to_internal_value(data)
+  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/serializers.py", line 479, in to_internal_value
+    for field in fields:
+  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/serializers.py", line 362, in _writable_fields
+    for field in self.fields.values():
+  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/serializers.py", line 356, in fields
+    for key, value in self.get_fields().items():
+  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/serializers.py", line 1027, in get_fields
+    assert hasattr(self, 'Meta'), (
+AssertionError: Class TaskUpdateSerializer missing "Meta" attribute
+"PUT /todolist/update-task/36/ HTTP/1.1" 500 21368
+/home/devkrishnan.va/Documents/Todolist_project/api/todolist/serializer.py changed, reloading.
 Watching for file changes with StatReloader
-"POST /todolist/create-task/ HTTP/1.1" 201 180
-/home/devkrishnan.va/Documents/training/python_training/todolist/views.py changed, reloading.
+/home/devkrishnan.va/Documents/Todolist_project/api/todolist/serializer.py changed, reloading.
 Watching for file changes with StatReloader
-"GET /todolist/view-tasks/ HTTP/1.1" 200 366
-"GET /todolist/view-tasks/?sort=asc HTTP/1.1" 200 366
-"GET /todolist/view-tasks/?sort=desc HTTP/1.1" 200 366
-"GET /todolist/view-tasks/?sort=desc&status=True HTTP/1.1" 200 37
-"GET /todolist/view-tasks/?sort=desc&status=False HTTP/1.1" 200 366
-/home/devkrishnan.va/Documents/training/python_training/todolist/views.py changed, reloading.
+"PUT /todolist/update-task/36/ HTTP/1.1" 200 4
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 948
+"OPTIONS /todolist/close-task/36/ HTTP/1.1" 200 0
+"PUT /todolist/close-task/36/ HTTP/1.1" 200 26
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 947
+Bad Request: /todolist/update-task/36/
+"PUT /todolist/update-task/36/ HTTP/1.1" 400 90
+"PUT /todolist/update-task/36/ HTTP/1.1" 200 4
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 949
+Bad Request: /todolist/create-task/
+"POST /todolist/create-task/ HTTP/1.1" 400 94
+Bad Request: /todolist/create-task/
+"POST /todolist/create-task/ HTTP/1.1" 400 94
+"POST /todolist/create-task/ HTTP/1.1" 201 172
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 949
+"OPTIONS /todolist/view-tasks/?page=2 HTTP/1.1" 200 0
+"GET /todolist/view-tasks/?page=2 HTTP/1.1" 200 201
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 949
+"GET /todolist/view-tasks/?page=2 HTTP/1.1" 200 201
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 949
+"GET /todolist/view-tasks/?page=2 HTTP/1.1" 200 201
+"GET /todolist/view-tasks/?page=2 HTTP/1.1" 200 201
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 949
+"GET /todolist/view-tasks/?page=2 HTTP/1.1" 200 201
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 949
+"GET /todolist/view-tasks/?page=2 HTTP/1.1" 200 201
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 949
+"POST /login/ HTTP/1.1" 200 483
+"GET /user/userdetails/ HTTP/1.1" 200 41
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 37
+"GET /user/userdetails/ HTTP/1.1" 200 41
+"POST /todolist/create-task/ HTTP/1.1" 201 175
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 204
+Bad Request: /todolist/create-task/
+"POST /todolist/create-task/ HTTP/1.1" 400 124
+/home/devkrishnan.va/Documents/Todolist_project/api/todolist/serializer.py changed, reloading.
 Watching for file changes with StatReloader
-/home/devkrishnan.va/Documents/training/python_training/todolist/views.py changed, reloading.
+Bad Request: /todolist/create-task/
+"POST /todolist/create-task/ HTTP/1.1" 400 124
+/home/devkrishnan.va/Documents/Todolist_project/api/todolist/serializer.py changed, reloading.
 Watching for file changes with StatReloader
-Internal Server Error: /todolist/close-task/1
+/home/devkrishnan.va/Documents/Todolist_project/api/todolist/serializer.py changed, reloading.
+Watching for file changes with StatReloader
+"OPTIONS /todolist/update-task/38/ HTTP/1.1" 200 0
+Bad Request: /todolist/update-task/38/
+"PUT /todolist/update-task/38/ HTTP/1.1" 400 127
+Bad Request: /todolist/create-task/
+"POST /todolist/create-task/ HTTP/1.1" 400 131
+Unauthorized: /login/
+"POST /login/ HTTP/1.1" 401 63
+"OPTIONS /login/refresh/ HTTP/1.1" 200 0
+Bad Request: /login/refresh/
+"POST /login/refresh/ HTTP/1.1" 400 39
+Unauthorized: /login/
+"POST /login/ HTTP/1.1" 401 63
+"POST /login/ HTTP/1.1" 200 483
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 37
+"GET /user/userdetails/ HTTP/1.1" 200 43
+"GET /user/userdetails/ HTTP/1.1" 200 43
+"OPTIONS /todolist/view-tasks/?page=1&status=True HTTP/1.1" 200 0
+"GET /todolist/view-tasks/?page=1&status=True HTTP/1.1" 200 37
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 37
+"POST /todolist/create-task/ HTTP/1.1" 201 174
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 203
+"GET /user/userdetails/ HTTP/1.1" 200 43
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 203
+"GET /user/userdetails/ HTTP/1.1" 200 43
+"OPTIONS /todolist/update-task/39/ HTTP/1.1" 200 0
+"PUT /todolist/update-task/39/ HTTP/1.1" 200 4
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 198
+Conflict: /todolist/update-task/39/
+"PUT /todolist/update-task/39/ HTTP/1.1" 409 21
+Bad Request: /todolist/update-task/39/
+"PUT /todolist/update-task/39/ HTTP/1.1" 400 127
+Bad Request: /todolist/update-task/39/
+"PUT /todolist/update-task/39/ HTTP/1.1" 400 127
+Bad Request: /todolist/update-task/39/
+"PUT /todolist/update-task/39/ HTTP/1.1" 400 127
+Bad Request: /todolist/update-task/39/
+"PUT /todolist/update-task/39/ HTTP/1.1" 400 127
+Bad Request: /todolist/update-task/39/
+"PUT /todolist/update-task/39/ HTTP/1.1" 400 127
+Bad Request: /todolist/update-task/39/
+"PUT /todolist/update-task/39/ HTTP/1.1" 400 127
+Bad Request: /todolist/update-task/39/
+"PUT /todolist/update-task/39/ HTTP/1.1" 400 127
+Bad Request: /todolist/update-task/39/
+"PUT /todolist/update-task/39/ HTTP/1.1" 400 127
+"POST /todolist/create-task/ HTTP/1.1" 201 173
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 348
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 348
+"GET /user/userdetails/ HTTP/1.1" 200 43
+"GET /user/userdetails/ HTTP/1.1" 200 43
+"OPTIONS /todolist/update-task/40/ HTTP/1.1" 200 0
+Bad Request: /todolist/update-task/40/
+"PUT /todolist/update-task/40/ HTTP/1.1" 400 127
+Bad Request: /todolist/create-task/
+"POST /todolist/create-task/ HTTP/1.1" 400 94
+"OPTIONS /login/ HTTP/1.1" 200 0
+Unauthorized: /login/
+"POST /login/ HTTP/1.1" 401 63
+"OPTIONS /login/refresh/ HTTP/1.1" 200 0
+Bad Request: /login/refresh/
+"POST /login/refresh/ HTTP/1.1" 400 39
+Unauthorized: /login/
+"POST /login/ HTTP/1.1" 401 63
+Unauthorized: /login/
+"POST /login/ HTTP/1.1" 401 63
+Bad Request: /login/refresh/
+"POST /login/refresh/ HTTP/1.1" 400 39
+Unauthorized: /login/
+"POST /login/ HTTP/1.1" 401 63
+"POST /login/ HTTP/1.1" 200 483
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 949
+"GET /user/userdetails/ HTTP/1.1" 200 46
+"GET /user/userdetails/ HTTP/1.1" 200 46
+"GET /user/userdetails/ HTTP/1.1" 200 46
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 949
+"OPTIONS /todolist/view-tasks/?page=2 HTTP/1.1" 200 0
+"GET /todolist/view-tasks/?page=2 HTTP/1.1" 200 201
+"OPTIONS /todolist/delete-task/30/ HTTP/1.1" 200 0
+"DELETE /todolist/delete-task/30/ HTTP/1.1" 200 22
+Not Found: /todolist/view-tasks/
+"GET /todolist/view-tasks/?page=2 HTTP/1.1" 404 26
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 949
+Watching for file changes with StatReloader
+"OPTIONS /login/ HTTP/1.1" 200 0
+"POST /login/ HTTP/1.1" 200 483
+"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
+"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
+"GET /user/userdetails/ HTTP/1.1" 200 46
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 949
+"GET /user/userdetails/ HTTP/1.1" 200 46
+"OPTIONS /todolist/close-task/37/ HTTP/1.1" 200 0
+"PUT /todolist/close-task/37/ HTTP/1.1" 200 26
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 948
+"OPTIONS /todolist/close-task/32/ HTTP/1.1" 200 0
+"PUT /todolist/close-task/32/ HTTP/1.1" 200 26
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 947
+"OPTIONS /todolist/close-task/34/ HTTP/1.1" 200 0
+"PUT /todolist/close-task/34/ HTTP/1.1" 200 26
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 946
+"OPTIONS /todolist/delete-task/37/ HTTP/1.1" 200 0
+"DELETE /todolist/delete-task/37/ HTTP/1.1" 200 22
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 798
+"OPTIONS /todolist/delete-task/35/ HTTP/1.1" 200 0
+"DELETE /todolist/delete-task/35/ HTTP/1.1" 200 22
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 648
+"OPTIONS /todolist/delete-task/34/ HTTP/1.1" 200 0
+"DELETE /todolist/delete-task/34/ HTTP/1.1" 200 22
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 499
+"OPTIONS /todolist/delete-task/32/ HTTP/1.1" 200 0
+"DELETE /todolist/delete-task/32/ HTTP/1.1" 200 22
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 350
+"OPTIONS /todolist/delete-task/33/ HTTP/1.1" 200 0
+"DELETE /todolist/delete-task/33/ HTTP/1.1" 200 22
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 202
+"OPTIONS /todolist/delete-task/36/ HTTP/1.1" 200 0
+"DELETE /todolist/delete-task/36/ HTTP/1.1" 200 22
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 37
+"OPTIONS /login/ HTTP/1.1" 200 0
+Unauthorized: /login/
+"POST /login/ HTTP/1.1" 401 63
+"OPTIONS /login/refresh/ HTTP/1.1" 200 0
+Bad Request: /login/refresh/
+"POST /login/refresh/ HTTP/1.1" 400 39
+Unauthorized: /login/
+"POST /login/ HTTP/1.1" 401 63
+Unauthorized: /login/
+"POST /login/ HTTP/1.1" 401 63
+Bad Request: /login/refresh/
+"POST /login/refresh/ HTTP/1.1" 400 39
+Unauthorized: /login/
+"POST /login/ HTTP/1.1" 401 63
+Unauthorized: /login/
+"POST /login/ HTTP/1.1" 401 63
+Bad Request: /login/refresh/
+"POST /login/refresh/ HTTP/1.1" 400 39
+Unauthorized: /login/
+"POST /login/ HTTP/1.1" 401 63
+/home/devkrishnan.va/Documents/Todolist_project/api/user/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/devkrishnan.va/Documents/Todolist_project/api/user/serializer.py changed, reloading.
+Watching for file changes with StatReloader
+/home/devkrishnan.va/Documents/Todolist_project/api/user/views.py changed, reloading.
+Watching for file changes with StatReloader
+/home/devkrishnan.va/Documents/Todolist_project/api/user/serializer.py changed, reloading.
+Watching for file changes with StatReloader
+/home/devkrishnan.va/Documents/Todolist_project/api/user/serializer.py changed, reloading.
+Watching for file changes with StatReloader
+/home/devkrishnan.va/Documents/Todolist_project/api/user/urls.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /user/login
 Traceback (most recent call last):
   File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
     response = get_response(request)
@@ -28,841 +430,50 @@ Traceback (most recent call last):
     return self.response_redirect_class(self.get_full_path_with_slash(request))
   File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/middleware/common.py", line 87, in get_full_path_with_slash
     raise RuntimeError(
-RuntimeError: You called this URL via PUT, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining PUT data. Change your form to point to 127.0.0.1:8000/todolist/close-task/1/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
-"PUT /todolist/close-task/1 HTTP/1.1" 500 74877
-Unauthorized: /todolist/close-task/1/
-"PUT /todolist/close-task/1/ HTTP/1.1" 401 58
-"PUT /todolist/close-task/1/ HTTP/1.1" 200 25
-"GET /todolist/view-tasks/?sort=desc&status=False HTTP/1.1" 200 209
-"GET /todolist/view-tasks/?sort=desc HTTP/1.1" 200 365
-/home/devkrishnan.va/Documents/training/python_training/todolist/views.py changed, reloading.
-Watching for file changes with StatReloader
-/home/devkrishnan.va/Documents/training/python_training/todolist/views.py changed, reloading.
-Watching for file changes with StatReloader
-/home/devkrishnan.va/Documents/training/python_training/todolist/views.py changed, reloading.
-Watching for file changes with StatReloader
-Unauthorized: /todolist/delete-task/1/
-"DELETE /todolist/delete-task/1/ HTTP/1.1" 401 58
-"DELETE /todolist/delete-task/1/ HTTP/1.1" 200 22
-"GET /todolist/view-tasks/?sort=desc HTTP/1.1" 200 209
-Not Found: /todolist/delete-task/1/
-"DELETE /todolist/delete-task/1/ HTTP/1.1" 404 20
-Not Found: /todolist/close-task/100/
-Bad Request: /todolist/create-task/
-Bad Request: /todolist/create-task/
-Not Found: /todolist/delete-task/100/
-Unauthorized: /login/
-Not Found: /todolist/update-task/100/
-Bad Request: /todolist/update-task/5/
-Bad Request: /todolist/update-task/6/
-Conflict: /todolist/update-task/7/
-Bad Request: /todolist/view-tasks/
-Bad Request: /todolist/view-tasks/
-Bad Request: /user/register/
-Bad Request: /user/register/
-Bad Request: /user/register/
-Bad Request: /user/register/
-Unauthorized: /todolist/update-task/2/
-"PUT /todolist/update-task/2/ HTTP/1.1" 401 58
-Internal Server Error: /todolist/update-task/2/
-Traceback (most recent call last):
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
-    response = get_response(request)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
-    return view_func(*args, **kwargs)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "/home/devkrishnan.va/Documents/training/python_training/todolist/views.py", line 260, in put
-    if db_value.version == serialized.validated_data["version"]:
-KeyError: 'version'
-"PUT /todolist/update-task/2/ HTTP/1.1" 500 98227
-"PUT /todolist/update-task/2/ HTTP/1.1" 200 4
-"GET /todolist/view-tasks/?sort=desc HTTP/1.1" 200 208
-Not Found: /todolist/update-task/1/
-"PUT /todolist/update-task/1/ HTTP/1.1" 404 23
-"POST /user/register/ HTTP/1.1" 201 275
-"POST /login/ HTTP/1.1" 200 483
-"GET /todolist/view-tasks/ HTTP/1.1" 200 37
-Bad Request: /todolist/create-task/
-"POST /todolist/create-task/ HTTP/1.1" 400 124
-"POST /todolist/create-task/ HTTP/1.1" 201 182
-"GET /todolist/view-tasks/ HTTP/1.1" 200 211
-Not Found: /todolist/close-task/2/
-"PUT /todolist/close-task/2/ HTTP/1.1" 404 20
-Not Found: /todolist/update-task/2/
-"PUT /todolist/update-task/2/ HTTP/1.1" 404 23
-"GET /todolist/view-tasks/ HTTP/1.1" 200 211
-"OPTIONS /login/ HTTP/1.1" 200 0
-"POST /login/ HTTP/1.1" 200 483
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 208
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 208
-"OPTIONS /todolist/create-task/ HTTP/1.1" 200 0
-Internal Server Error: /todolist/create-task/
-Traceback (most recent call last):
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
-    response = get_response(request)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
-    return view_func(*args, **kwargs)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "/home/devkrishnan.va/Documents/training/python_training/todolist/views.py", line 113, in post
-    request_data["user"] = request.user.id
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/http/request.py", line 555, in __setitem__
-    self._assert_mutable()
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/http/request.py", line 552, in _assert_mutable
-    raise AttributeError("This QueryDict instance is immutable")
-AttributeError: This QueryDict instance is immutable
-"POST /todolist/create-task/ HTTP/1.1" 500 20543
-"POST /todolist/create-task/ HTTP/1.1" 201 184
-"OPTIONS /todolist/create-task/ HTTP/1.1" 200 0
-Internal Server Error: /todolist/create-task/
-Traceback (most recent call last):
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
-    response = get_response(request)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
-    return view_func(*args, **kwargs)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "/home/devkrishnan.va/Documents/training/python_training/todolist/views.py", line 113, in post
-    request_data["user"] = request.user.id
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/http/request.py", line 555, in __setitem__
-    self._assert_mutable()
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/http/request.py", line 552, in _assert_mutable
-    raise AttributeError("This QueryDict instance is immutable")
-AttributeError: This QueryDict instance is immutable
-"POST /todolist/create-task/ HTTP/1.1" 500 20600
-/home/devkrishnan.va/Documents/training/python_training/todolist/views.py changed, reloading.
-Watching for file changes with StatReloader
-"POST /todolist/create-task/ HTTP/1.1" 201 184
-"OPTIONS /todolist/create-task/ HTTP/1.1" 200 0
-Internal Server Error: /todolist/create-task/
-Traceback (most recent call last):
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
-    response = get_response(request)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
-    return view_func(*args, **kwargs)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "/home/devkrishnan.va/Documents/training/python_training/todolist/views.py", line 114, in post
-    request_data["user"] = request.user.id
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/http/request.py", line 555, in __setitem__
-    self._assert_mutable()
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/http/request.py", line 552, in _assert_mutable
-    raise AttributeError("This QueryDict instance is immutable")
-AttributeError: This QueryDict instance is immutable
-"POST /todolist/create-task/ HTTP/1.1" 500 20600
-/home/devkrishnan.va/Documents/training/python_training/todolist/views.py changed, reloading.
-Watching for file changes with StatReloader
-"OPTIONS /todolist/create-task/ HTTP/1.1" 200 0
-"POST /todolist/create-task/ HTTP/1.1" 201 165
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 350
-/home/devkrishnan.va/Documents/training/python_training/todolist/views.py changed, reloading.
-Watching for file changes with StatReloader
-"OPTIONS /todolist/close-task/6/ HTTP/1.1" 200 0
-"PUT /todolist/close-task/6/ HTTP/1.1" 200 25
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 349
-"OPTIONS /todolist/update-task/6/ HTTP/1.1" 200 0
-"PUT /todolist/update-task/6/ HTTP/1.1" 200 4
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 357
-"OPTIONS /todolist/delete-task/6/ HTTP/1.1" 200 0
-"DELETE /todolist/delete-task/6/ HTTP/1.1" 200 22
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 208
-"OPTIONS /login/ HTTP/1.1" 200 0
-"POST /login/ HTTP/1.1" 200 483
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 533
-"OPTIONS /todolist/delete-task/4/ HTTP/1.1" 200 0
-"DELETE /todolist/delete-task/4/ HTTP/1.1" 200 22
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 372
-"OPTIONS /todolist/delete-task/3/ HTTP/1.1" 200 0
-"DELETE /todolist/delete-task/3/ HTTP/1.1" 200 22
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 213
-"OPTIONS /todolist/view-tasks/?page=1&status=True HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1&status=True HTTP/1.1" 200 37
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 213
-"POST /user/register/ HTTP/1.1" 201 271
-"OPTIONS /login/ HTTP/1.1" 200 0
-"POST /login/ HTTP/1.1" 200 483
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 37
-"OPTIONS /todolist/create-task/ HTTP/1.1" 200 0
-"POST /todolist/create-task/ HTTP/1.1" 201 171
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 200
-"OPTIONS /login/ HTTP/1.1" 200 0
-"POST /login/ HTTP/1.1" 200 483
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 208
-"OPTIONS /todolist/create-task/ HTTP/1.1" 200 0
-Conflict: /todolist/create-task/
-"POST /todolist/create-task/ HTTP/1.1" 409 139
-"OPTIONS /todolist/create-task/ HTTP/1.1" 200 0
-Conflict: /todolist/create-task/
-"POST /todolist/create-task/ HTTP/1.1" 409 139
-/home/devkrishnan.va/Documents/training/python_training/todolist/views.py changed, reloading.
-Watching for file changes with StatReloader
-Not Found: /todolist/close-task/100/
-Bad Request: /todolist/create-task/
-Bad Request: /todolist/create-task/
-Not Found: /todolist/delete-task/100/
-Unauthorized: /login/
-Not Found: /todolist/update-task/100/
-Bad Request: /todolist/update-task/5/
-Bad Request: /todolist/update-task/6/
-Conflict: /todolist/update-task/7/
-Bad Request: /todolist/view-tasks/
-Bad Request: /todolist/view-tasks/
-Bad Request: /user/register/
-Bad Request: /user/register/
-Bad Request: /user/register/
-Bad Request: /user/register/
-/home/devkrishnan.va/Documents/training/python_training/todolist/views.py changed, reloading.
-Watching for file changes with StatReloader
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 208
-/home/devkrishnan.va/Documents/training/python_training/todolist/views.py changed, reloading.
-Watching for file changes with StatReloader
-/home/devkrishnan.va/Documents/training/python_training/user/serializer.py changed, reloading.
-Watching for file changes with StatReloader
-/home/devkrishnan.va/Documents/training/python_training/user/views.py changed, reloading.
-Watching for file changes with StatReloader
-/home/devkrishnan.va/Documents/training/python_training/user/views.py changed, reloading.
-Watching for file changes with StatReloader
-/home/devkrishnan.va/Documents/training/python_training/user/views.py changed, reloading.
-Watching for file changes with StatReloader
-/home/devkrishnan.va/Documents/training/python_training/user/urls.py changed, reloading.
-Watching for file changes with StatReloader
-"GET /user/userdetails/ HTTP/1.1" 200 36
-/home/devkrishnan.va/Documents/training/python_training/user/views.py changed, reloading.
-Watching for file changes with StatReloader
-"GET /user/userdetails/ HTTP/1.1" 200 43
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 208
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 208
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 208
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 208
-"OPTIONS /login/ HTTP/1.1" 200 0
-"POST /login/ HTTP/1.1" 200 483
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 208
-"OPTIONS /login/ HTTP/1.1" 200 0
-"POST /login/ HTTP/1.1" 200 483
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 200
-"OPTIONS /login/ HTTP/1.1" 200 0
-Unauthorized: /login/
-"POST /login/ HTTP/1.1" 401 63
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/user/login/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+"POST /user/login HTTP/1.1" 500 74549
+Unauthorized: /user/login/
+"POST /user/login/ HTTP/1.1" 401 27
+"POST /user/login/ HTTP/1.1" 200 483
+"OPTIONS /user/login/ HTTP/1.1" 200 0
+Unauthorized: /user/login/
+"POST /user/login/ HTTP/1.1" 401 183
+Bad Request: /login/refresh/
+"POST /login/refresh/ HTTP/1.1" 400 39
+Unauthorized: /user/login/
+"POST /user/login/ HTTP/1.1" 401 183
+"OPTIONS /user/login/ HTTP/1.1" 200 0
+Unauthorized: /user/login/
+"POST /user/login/ HTTP/1.1" 401 183
 "OPTIONS /login/refresh/ HTTP/1.1" 200 0
 Bad Request: /login/refresh/
 "POST /login/refresh/ HTTP/1.1" 400 39
-"OPTIONS /login/ HTTP/1.1" 200 0
-Unauthorized: /login/
-"POST /login/ HTTP/1.1" 401 63
-"OPTIONS /login/ HTTP/1.1" 200 0
-"POST /login/ HTTP/1.1" 200 483
+"OPTIONS /user/login/ HTTP/1.1" 200 0
+Unauthorized: /user/login/
+"POST /user/login/ HTTP/1.1" 401 183
+"POST /user/login/ HTTP/1.1" 200 483
 "OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 208
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 208
 "OPTIONS /user/userdetails/ HTTP/1.1" 200 0
 "GET /user/userdetails/ HTTP/1.1" 200 46
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 37
 "OPTIONS /user/userdetails/ HTTP/1.1" 200 0
 "GET /user/userdetails/ HTTP/1.1" 200 46
-"OPTIONS /login/ HTTP/1.1" 200 0
-Unauthorized: /login/
-"POST /login/ HTTP/1.1" 401 63
+Watching for file changes with StatReloader
+"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
+"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
+Unauthorized: /todolist/view-tasks/
+"GET /todolist/view-tasks/?page=1 HTTP/1.1" 401 183
+Unauthorized: /user/userdetails/
+"GET /user/userdetails/ HTTP/1.1" 401 183
 "OPTIONS /login/refresh/ HTTP/1.1" 200 0
-Bad Request: /login/refresh/
-"POST /login/refresh/ HTTP/1.1" 400 39
-"OPTIONS /login/ HTTP/1.1" 200 0
-Unauthorized: /login/
-"POST /login/ HTTP/1.1" 401 63
-"OPTIONS /login/ HTTP/1.1" 200 0
-"POST /login/ HTTP/1.1" 200 483
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 208
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 208
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 208
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"OPTIONS /login/ HTTP/1.1" 200 0
-"POST /login/ HTTP/1.1" 200 483
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 41
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 200
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 41
-"OPTIONS /todolist/create-task/ HTTP/1.1" 200 0
-"POST /todolist/create-task/ HTTP/1.1" 201 176
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 353
-"OPTIONS /todolist/create-task/ HTTP/1.1" 200 0
-"POST /todolist/create-task/ HTTP/1.1" 201 172
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 502
-"OPTIONS /todolist/create-task/ HTTP/1.1" 200 0
-"POST /todolist/create-task/ HTTP/1.1" 201 170
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 649
-"OPTIONS /todolist/create-task/ HTTP/1.1" 200 0
-"POST /todolist/create-task/ HTTP/1.1" 201 171
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 797
-"OPTIONS /todolist/create-task/ HTTP/1.1" 200 0
-"POST /todolist/create-task/ HTTP/1.1" 201 174
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 948
-"OPTIONS /todolist/create-task/ HTTP/1.1" 200 0
-"POST /todolist/create-task/ HTTP/1.1" 201 173
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 950
-"OPTIONS /todolist/view-tasks/?page=2 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=2 HTTP/1.1" 200 200
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 950
-"OPTIONS /todolist/view-tasks/?page=2 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=2 HTTP/1.1" 200 200
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 950
-"OPTIONS /todolist/view-tasks/?page=2 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=2 HTTP/1.1" 200 200
-"OPTIONS /todolist/view-tasks/?page=2 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=2 HTTP/1.1" 200 200
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 950
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 950
-"OPTIONS /todolist/view-tasks/?page=2 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=2 HTTP/1.1" 200 200
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 950
-"OPTIONS /login/ HTTP/1.1" 200 0
-"POST /login/ HTTP/1.1" 200 483
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 208
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"OPTIONS /todolist/create-task/ HTTP/1.1" 200 0
-Conflict: /todolist/create-task/
-"POST /todolist/create-task/ HTTP/1.1" 409 139
-"OPTIONS /login/ HTTP/1.1" 200 0
-"POST /login/ HTTP/1.1" 200 483
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 208
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"OPTIONS /login/ HTTP/1.1" 200 0
-Unauthorized: /login/
-"POST /login/ HTTP/1.1" 401 63
 "OPTIONS /login/refresh/ HTTP/1.1" 200 0
-Bad Request: /login/refresh/
-"POST /login/refresh/ HTTP/1.1" 400 39
-"OPTIONS /login/ HTTP/1.1" 200 0
-Unauthorized: /login/
-"POST /login/ HTTP/1.1" 401 63
-"OPTIONS /login/ HTTP/1.1" 200 0
-"POST /login/ HTTP/1.1" 200 483
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
+"POST /login/refresh/ HTTP/1.1" 200 241
+"POST /login/refresh/ HTTP/1.1" 200 241
 "GET /user/userdetails/ HTTP/1.1" 200 46
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 208
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"OPTIONS /todolist/delete-task/2/ HTTP/1.1" 200 0
-"DELETE /todolist/delete-task/2/ HTTP/1.1" 200 22
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 37
-"OPTIONS /login/ HTTP/1.1" 200 0
-"POST /login/ HTTP/1.1" 200 483
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
 "GET /user/userdetails/ HTTP/1.1" 200 46
 "GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 37
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"OPTIONS /todolist/view-tasks/?page=1&status=True HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1&status=True HTTP/1.1" 200 37
-"OPTIONS /todolist/view-tasks/?page=1&status=False HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1&status=False HTTP/1.1" 200 37
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 37
-"OPTIONS /todolist/view-tasks/?page=1&status=False HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1&status=False HTTP/1.1" 200 37
-"OPTIONS /todolist/view-tasks/?page=1&status=True HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1&status=True HTTP/1.1" 200 37
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 37
-/home/devkrishnan.va/Documents/training/python_training/todolist/models.py changed, reloading.
-Watching for file changes with StatReloader
-Watching for file changes with StatReloader
-/home/devkrishnan.va/Documents/training/python_training/todolist/serializer.py changed, reloading.
-Watching for file changes with StatReloader
-/home/devkrishnan.va/Documents/training/python_training/todolist/serializer.py changed, reloading.
-Watching for file changes with StatReloader
-"OPTIONS /login/ HTTP/1.1" 200 0
-"POST /login/ HTTP/1.1" 200 483
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 41
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 950
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 41
-"OPTIONS /todolist/create-task/ HTTP/1.1" 200 0
-Internal Server Error: /todolist/create-task/
-Traceback (most recent call last):
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
-    response = get_response(request)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
-    return view_func(*args, **kwargs)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "/home/devkrishnan.va/Documents/training/python_training/todolist/views.py", line 116, in post
-    if serialized.is_valid():
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/serializers.py", line 227, in is_valid
-    self._validated_data = self.run_validation(self.initial_data)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/serializers.py", line 429, in run_validation
-    value = self.validate(value)
-  File "/home/devkrishnan.va/Documents/training/python_training/todolist/serializer.py", line 23, in validate
-    user = User.objects.get(user_id=attrs.get("user"))
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/db/models/query.py", line 623, in get
-    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/db/models/query.py", line 1436, in filter
-    return self._filter_or_exclude(False, args, kwargs)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/db/models/query.py", line 1454, in _filter_or_exclude
-    clone._filter_or_exclude_inplace(negate, args, kwargs)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/db/models/query.py", line 1461, in _filter_or_exclude_inplace
-    self._query.add_q(Q(*args, **kwargs))
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1545, in add_q
-    clause, _ = self._add_q(q_object, self.used_aliases)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1576, in _add_q
-    child_clause, needed_inner = self.build_filter(
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1426, in build_filter
-    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1236, in solve_lookup_type
-    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1724, in names_to_path
-    raise FieldError(
-django.core.exceptions.FieldError: Cannot resolve keyword 'user_id' into field. Choices are: date_created, first_name, id, last_login, last_name, logentry, password, tasks, username
-"POST /todolist/create-task/ HTTP/1.1" 500 22751
-/home/devkrishnan.va/Documents/training/python_training/todolist/serializer.py changed, reloading.
-Watching for file changes with StatReloader
-"OPTIONS /todolist/create-task/ HTTP/1.1" 200 0
-Internal Server Error: /todolist/create-task/
-Traceback (most recent call last):
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 2053, in get_prep_value
-    return int(value)
-TypeError: int() argument must be a string, a bytes-like object or a real number, not 'User'
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
-    response = get_response(request)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
-    return view_func(*args, **kwargs)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "/home/devkrishnan.va/Documents/training/python_training/todolist/views.py", line 116, in post
-    if serialized.is_valid():
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/serializers.py", line 227, in is_valid
-    self._validated_data = self.run_validation(self.initial_data)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/serializers.py", line 429, in run_validation
-    value = self.validate(value)
-  File "/home/devkrishnan.va/Documents/training/python_training/todolist/serializer.py", line 23, in validate
-    user = User.objects.get(id=attrs.get("user"))
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
-    return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/db/models/query.py", line 623, in get
-    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/db/models/query.py", line 1436, in filter
-    return self._filter_or_exclude(False, args, kwargs)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/db/models/query.py", line 1454, in _filter_or_exclude
-    clone._filter_or_exclude_inplace(negate, args, kwargs)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/db/models/query.py", line 1461, in _filter_or_exclude_inplace
-    self._query.add_q(Q(*args, **kwargs))
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1545, in add_q
-    clause, _ = self._add_q(q_object, self.used_aliases)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1576, in _add_q
-    child_clause, needed_inner = self.build_filter(
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1491, in build_filter
-    condition = self.build_lookup(lookups, col, value)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1318, in build_lookup
-    lookup = lookup_class(lhs, rhs)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/db/models/lookups.py", line 27, in __init__
-    self.rhs = self.get_prep_lookup()
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/db/models/lookups.py", line 341, in get_prep_lookup
-    return super().get_prep_lookup()
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/db/models/lookups.py", line 85, in get_prep_lookup
-    return self.lhs.output_field.get_prep_value(self.rhs)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/db/models/fields/__init__.py", line 2055, in get_prep_value
-    raise e.__class__(
-TypeError: Field 'id' expected a number but got <User: alen@gmail.com>.
-"POST /todolist/create-task/ HTTP/1.1" 500 23306
-/home/devkrishnan.va/Documents/training/python_training/todolist/serializer.py changed, reloading.
-Watching for file changes with StatReloader
-"OPTIONS /todolist/create-task/ HTTP/1.1" 200 0
-"POST /todolist/create-task/ HTTP/1.1" 201 173
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 947
-/home/devkrishnan.va/Documents/training/python_training/todolist/serializer.py changed, reloading.
-Watching for file changes with StatReloader
-"OPTIONS /todolist/create-task/ HTTP/1.1" 200 0
-"POST /todolist/create-task/ HTTP/1.1" 201 175
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 950
-/home/devkrishnan.va/Documents/training/python_training/todolist/serializer.py changed, reloading.
-Watching for file changes with StatReloader
-/home/devkrishnan.va/Documents/training/python_training/todolist/serializer.py changed, reloading.
-Watching for file changes with StatReloader
-"OPTIONS /todolist/create-task/ HTTP/1.1" 200 0
-"POST /todolist/create-task/ HTTP/1.1" 201 173
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 953
-/home/devkrishnan.va/Documents/training/python_training/todolist/serializer.py changed, reloading.
-Watching for file changes with StatReloader
-/home/devkrishnan.va/Documents/training/python_training/todolist/serializer.py changed, reloading.
-Watching for file changes with StatReloader
-"OPTIONS /todolist/create-task/ HTTP/1.1" 200 0
-Internal Server Error: /todolist/create-task/
-Traceback (most recent call last):
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
-    response = get_response(request)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
-    return view_func(*args, **kwargs)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
-    response = self.handle_exception(exc)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
-    raise exc
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
-    response = handler(request, *args, **kwargs)
-  File "/home/devkrishnan.va/Documents/training/python_training/todolist/views.py", line 116, in post
-    if serialized.is_valid():
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/serializers.py", line 227, in is_valid
-    self._validated_data = self.run_validation(self.initial_data)
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/rest_framework/serializers.py", line 429, in run_validation
-    value = self.validate(value)
-  File "/home/devkrishnan.va/Documents/training/python_training/todolist/serializer.py", line 24, in validate
-    print(userTasks["task_name"])
-  File "/home/devkrishnan.va/.local/lib/python3.10/site-packages/django/db/models/query.py", line 418, in __getitem__
-    raise TypeError(
-TypeError: QuerySet indices must be integers or slices, not str.
-"POST /todolist/create-task/ HTTP/1.1" 500 20861
-/home/devkrishnan.va/Documents/training/python_training/todolist/serializer.py changed, reloading.
-Watching for file changes with StatReloader
-"OPTIONS /todolist/create-task/ HTTP/1.1" 200 0
-"POST /todolist/create-task/ HTTP/1.1" 201 172
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 954
-/home/devkrishnan.va/Documents/training/python_training/todolist/serializer.py changed, reloading.
-Watching for file changes with StatReloader
-/home/devkrishnan.va/Documents/training/python_training/todolist/serializer.py changed, reloading.
-Watching for file changes with StatReloader
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 954
-"GET /user/userdetails/ HTTP/1.1" 200 41
-"OPTIONS /todolist/create-task/ HTTP/1.1" 200 0
-Bad Request: /todolist/create-task/
-"POST /todolist/create-task/ HTTP/1.1" 400 94
-"OPTIONS /todolist/create-task/ HTTP/1.1" 200 0
-"POST /todolist/create-task/ HTTP/1.1" 201 171
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 951
-"OPTIONS /login/ HTTP/1.1" 200 0
-"POST /login/ HTTP/1.1" 200 483
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
+"OPTIONS /user/login/ HTTP/1.1" 200 0
+"POST /user/login/ HTTP/1.1" 200 483
 "GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 37
 "GET /user/userdetails/ HTTP/1.1" 200 46
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
 "GET /user/userdetails/ HTTP/1.1" 200 46
-"OPTIONS /todolist/create-task/ HTTP/1.1" 200 0
-"POST /todolist/create-task/ HTTP/1.1" 201 172
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 201
-"OPTIONS /todolist/create-task/ HTTP/1.1" 200 0
-Bad Request: /todolist/create-task/
-"POST /todolist/create-task/ HTTP/1.1" 400 94
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"OPTIONS /todolist/view-tasks/?page=1&status=True HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1&status=True HTTP/1.1" 200 37
-"OPTIONS /todolist/view-tasks/?page=1&status=False HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1&status=False HTTP/1.1" 200 201
-"OPTIONS /todolist/close-task/22/ HTTP/1.1" 200 0
-"PUT /todolist/close-task/22/ HTTP/1.1" 200 26
-"OPTIONS /todolist/view-tasks/?page=1&status=False HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1&status=False HTTP/1.1" 200 37
-"OPTIONS /todolist/view-tasks/?page=1&status=True HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1&status=True HTTP/1.1" 200 200
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 200
-"OPTIONS /login/ HTTP/1.1" 200 0
-"POST /login/ HTTP/1.1" 200 483
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 200
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"OPTIONS /todolist/view-tasks/?page=1&status=False HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1&status=False HTTP/1.1" 200 37
-"OPTIONS /todolist/view-tasks/?page=1&status=True HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1&status=True HTTP/1.1" 200 200
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 200
-"OPTIONS /todolist/view-tasks/?page=1&status=True HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1&status=True HTTP/1.1" 200 200
-"OPTIONS /todolist/view-tasks/?page=1&status=False HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1&status=False HTTP/1.1" 200 37
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 200
-Bad Request: /todolist/create-task/
-"POST /todolist/create-task/ HTTP/1.1" 400 94
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 200
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"OPTIONS /todolist/create-task/ HTTP/1.1" 200 0
-Bad Request: /todolist/create-task/
-"POST /todolist/create-task/ HTTP/1.1" 400 94
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 200
-"OPTIONS /todolist/create-task/ HTTP/1.1" 200 0
-Bad Request: /todolist/create-task/
-"POST /todolist/create-task/ HTTP/1.1" 400 94
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 200
-"OPTIONS /todolist/create-task/ HTTP/1.1" 200 0
-Bad Request: /todolist/create-task/
-"POST /todolist/create-task/ HTTP/1.1" 400 94
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 200
-"OPTIONS /todolist/create-task/ HTTP/1.1" 200 0
-Bad Request: /todolist/create-task/
-"POST /todolist/create-task/ HTTP/1.1" 400 94
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 200
-"OPTIONS /todolist/create-task/ HTTP/1.1" 200 0
-Bad Request: /todolist/create-task/
-"POST /todolist/create-task/ HTTP/1.1" 400 94
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 200
-"OPTIONS /todolist/create-task/ HTTP/1.1" 200 0
-Bad Request: /todolist/create-task/
-"POST /todolist/create-task/ HTTP/1.1" 400 94
-"OPTIONS /todolist/create-task/ HTTP/1.1" 200 0
-Bad Request: /todolist/create-task/
-"POST /todolist/create-task/ HTTP/1.1" 400 124
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 200
-"OPTIONS /todolist/create-task/ HTTP/1.1" 200 0
-Bad Request: /todolist/create-task/
-"POST /todolist/create-task/ HTTP/1.1" 400 124
-"OPTIONS /todolist/create-task/ HTTP/1.1" 200 0
-Bad Request: /todolist/create-task/
-"POST /todolist/create-task/ HTTP/1.1" 400 94
-"OPTIONS /todolist/create-task/ HTTP/1.1" 200 0
-"POST /todolist/create-task/ HTTP/1.1" 201 174
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 351
-"OPTIONS /todolist/create-task/ HTTP/1.1" 200 0
-"POST /todolist/create-task/ HTTP/1.1" 201 172
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 500
-"OPTIONS /todolist/create-task/ HTTP/1.1" 200 0
-"POST /todolist/create-task/ HTTP/1.1" 201 172
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 649
-"OPTIONS /todolist/close-task/25/ HTTP/1.1" 200 0
-"PUT /todolist/close-task/25/ HTTP/1.1" 200 26
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 648
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 648
-"OPTIONS /todolist/view-tasks/?page=1&status=False HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1&status=False HTTP/1.1" 200 352
-"OPTIONS /todolist/view-tasks/?page=1&status=True HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1&status=True HTTP/1.1" 200 348
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 648
-"OPTIONS /todolist/view-tasks/?page=1&status=False HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1&status=False HTTP/1.1" 200 352
-"OPTIONS /todolist/view-tasks/?page=1&status=True HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1&status=True HTTP/1.1" 200 348
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 648
-"OPTIONS /todolist/view-tasks/?page=1&status=True HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1&status=True HTTP/1.1" 200 348
-"OPTIONS /todolist/view-tasks/?page=1&status=False HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1&status=False HTTP/1.1" 200 352
-"OPTIONS /todolist/view-tasks/?page=1&status=True HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1&status=True HTTP/1.1" 200 348
-"OPTIONS /todolist/view-tasks/?page=1&status=False HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1&status=False HTTP/1.1" 200 352
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 648
-Unauthorized: /login/
-"POST /login/ HTTP/1.1" 401 63
-"OPTIONS /todolist/close-task/23/ HTTP/1.1" 200 0
-"PUT /todolist/close-task/23/ HTTP/1.1" 200 26
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 647
-Watching for file changes with StatReloader
-Watching for file changes with StatReloader
-Watching for file changes with StatReloader
-"OPTIONS /login/ HTTP/1.1" 200 0
-"POST /login/ HTTP/1.1" 200 483
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 647
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"OPTIONS /user/userdetails/ HTTP/1.1" 200 0
-"GET /user/userdetails/ HTTP/1.1" 200 46
-"OPTIONS /todolist/view-tasks/?page=1&status=False HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1&status=False HTTP/1.1" 200 201
-"OPTIONS /todolist/view-tasks/?page=1&status=True HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1&status=True HTTP/1.1" 200 498
-"OPTIONS /todolist/view-tasks/?page=1 HTTP/1.1" 200 0
-"GET /todolist/view-tasks/?page=1 HTTP/1.1" 200 647

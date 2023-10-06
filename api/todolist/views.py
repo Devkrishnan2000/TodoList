@@ -6,8 +6,7 @@ from rest_framework.status import HTTP_404_NOT_FOUND as not_found
 from rest_framework.status import HTTP_201_CREATED as created
 from rest_framework.status import HTTP_409_CONFLICT as conflict
 from .serializer import TaskViewSerializer as tvs
-from user.serializer import UserTaskViewSerializer as UTV
-from user.models import User
+from .serializer import TaskUpdateSerializer as tus
 from .models import Task
 from .pagination import CustomPagination
 from django.db import IntegrityError
@@ -41,7 +40,7 @@ def response_failure(message, error):
     return {"message": message, "error": error}
 
 
-def get_by_status(task_status, task_sort,user_id):
+def get_by_status(task_status, task_sort, user_id):
     """Displays task by status
 
     Args:
@@ -56,24 +55,25 @@ def get_by_status(task_status, task_sort,user_id):
     if task_status == "True" or task_status == "False":
         if task_sort:  # sorts task based on query param
             if task_sort == "asc":
-                result = Task.objects.filter(
-                    task_status=eval(task_status)).order_by(
-                    "task_created"
-                ).filter(user_id=user_id)
+                result = (
+                    Task.objects.filter(task_status=eval(task_status))
+                    .order_by("task_created")
+                    .filter(user_id=user_id)
+                )
             elif task_sort == "desc":
                 result = Task.objects.order_by("-task_created").filter(
-                    task_status=eval(task_status),user_id=user_id
+                    task_status=eval(task_status), user_id=user_id
                 )
             else:
                 result = False  # returns false on incorrect params
         else:
-            result = Task.objects.filter(task_status=eval(task_status),user_id=user_id)
+            result = Task.objects.filter(task_status=eval(task_status), user_id=user_id)
         return result
     else:
         return False
 
 
-def get_all_tasks(task_sort,user_id):
+def get_all_tasks(task_sort, user_id):
     """Display's all task's
     Args:
         task_sort (str):if "asc" then sorts ascending if desc
@@ -107,11 +107,12 @@ class CreateTask(APIView):
     permission_classes = (IsAuthenticated,)
 
     def post(self, request):
-       
-        request_data = request.data.copy() #using copy() because query dict is immutable
+        request_data = (
+            request.data.copy()
+        )  # using copy() because query dict is immutable
         # appends user id to the existing request data
         request_data["user"] = request.user.id
-         # serializing data from request body using TaskCreationSerializer
+        # serializing data from request body using TaskCreationSerializer
         serialized = tvs(data=request_data)
         if serialized.is_valid():
             try:
@@ -122,9 +123,9 @@ class CreateTask(APIView):
                 )
             except IntegrityError as e:
                 return Response(
-                    response_failure("Task with same name Already Exists",str(e)),
-                    status=conflict                  
-                )   
+                    response_failure("Task with same name Already Exists", str(e)),
+                    status=conflict,
+                )
         else:
             # displays validation error
             return Response(
@@ -147,7 +148,6 @@ class ViewTasks(APIView, CustomPagination):
 
     permission_classes = (IsAuthenticated,)
 
-  
     def get(self, request):
         # gets status,userid,sort from query params
         task_status = request.GET.get("status")
@@ -155,13 +155,12 @@ class ViewTasks(APIView, CustomPagination):
         task_sort = request.GET.get("sort")
         if user_id:
             if task_status:
-                result = get_by_status(task_status, task_sort,user_id)
+                result = get_by_status(task_status, task_sort, user_id)
             else:
-                result = get_all_tasks(task_sort,user_id)
+                result = get_all_tasks(task_sort, user_id)
             if result is False:
                 return Response(
-                    response_failure(
-                        "Failed !", "Incorrect params"), status=bad_request
+                    response_failure("Failed !", "Incorrect params"), status=bad_request
                 )
 
             result_page = CustomPagination.paginate_queryset(
@@ -177,13 +176,11 @@ class ViewTasks(APIView, CustomPagination):
                 return Response(response_success("Task List", result))
             else:
                 # displays error if list empty
-                return Response(
-                    response_failure(
-                        "List Empty !", serialized.data)
-        
-                )
+                return Response(response_failure("List Empty !", serialized.data))
         else:
-            return Response(response_failure("User id required","No id found"),status=bad_request)        
+            return Response(
+                response_failure("User id required", "No id found"), status=bad_request
+            )
 
 
 class CloseTask(APIView):
@@ -202,7 +199,7 @@ class CloseTask(APIView):
         # gets task id from url
         user_id = request.user.id
         try:
-            task_obj = Task.objects.get(id=task_id,user_id=user_id)
+            task_obj = Task.objects.get(id=task_id, user_id=user_id)
             task_obj.task_status = True
             task_obj.save()
             return Response("Task with id " + str(task_id) + " Closed !")
@@ -227,13 +224,12 @@ class DeleteTask(APIView):
         # gets task id from url
         user_id = request.user.id
         try:
-            result = Task.objects.get(id=task_id,user_id=user_id).delete()
+            result = Task.objects.get(id=task_id, user_id=user_id).delete()
             if result[0]:
                 return Response("Deleted Successfully")
             else:
                 return Response(
-                    response_failure(
-                        "Failed !!", "Task not Found"), status=not_found
+                    response_failure("Failed !!", "Task not Found"), status=not_found
                 )
         except Task.DoesNotExist:
             return Response("Task not Found !! ", status=not_found)
@@ -253,10 +249,15 @@ class UpdateTask(APIView):
 
     def put(self, request, task_id):
         user_id = request.user.id
-        serialized = tvs(data=request.data, partial=True)
+        request_data = (
+            request.data.copy()
+        )  # using copy() because query dict is immutable
+        # appends user id to the existing request data
+        request_data["user"] = user_id
+        serialized = tus(data=request_data)
         if serialized.is_valid():
             try:
-                db_value = Task.objects.get(id=task_id,user_id=user_id)
+                db_value = Task.objects.get(id=task_id, user_id=user_id)
                 # check's whether the local version and db version are same
                 if db_value.version == serialized.validated_data["version"]:
                     # increments the version during update
@@ -267,7 +268,7 @@ class UpdateTask(APIView):
                         db_value.save()
                         return Response(True)
                     except IntegrityError:
-                        return Response("Task Already Exists",status=conflict)
+                        return Response("Task Already Exists", status=conflict)
                 else:
                     return Response("Version mismatch !!", status=conflict)
             except Task.DoesNotExist:
@@ -275,7 +276,6 @@ class UpdateTask(APIView):
 
         else:
             return Response(
-                response_failure(
-                    "Validation Error", list(serialized.errors.items())),
+                response_failure("Validation Error", list(serialized.errors.items())),
                 status=bad_request,
             )

@@ -3,29 +3,38 @@ import Card from "react-bootstrap/Card";
 import TaskModal from "../components/TaskModal";
 import { useState } from "react";
 import { closeTask, deleteTask, toLocalDate } from "../util/apiCalls";
-import Modal from 'react-bootstrap/Modal';
+import Modal from "react-bootstrap/Modal";
+import ErrorModal from "./ErrorModal";
 function TaskCard(props) {
   const [updateModalShow, setUpdateModalShow] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   const handlePopupClose = () => setShowPopup(false);
   const handlePopupShow = () => setShowPopup(true);
+
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const [title, setTitle] = useState("");
+
   const setTaskCompleted = async () => {
     let result = await closeTask(props.task.id);
     if (result.status) {
-      props.reloadTask(props.curPage,props.task_status);
+      props.reloadTask(props.curPage, props.task_status);
     } else {
-      alert("Error Occured Please Try again later");
+      setTitle("Operation Failed !");
+      handleShow();
       console.log(result);
     }
   };
 
-  const performDelete = async() => {
+  const performDelete = async () => {
     let result = await deleteTask(props.task.id);
     if (result.status) {
-      props.reloadTask(props.curPage,props.task_status);
+      props.reloadTask(props.curPage, props.task_status);
     } else {
-      alert("Error Occured Please Try again later");
-      
+      setTitle("Deletion Failed !");
+      handleShow();
+      console.log(result);
     }
   };
 
@@ -41,14 +50,18 @@ function TaskCard(props) {
         <Card.Title>{props.task.task_name}</Card.Title>
         <Card.Text>{props.task.task_desc}</Card.Text>
         {showStatus(props.task.task_status)}
-        <Card.Text>Created On :{toLocalDate(props.task.task_created)}</Card.Text>
-        <Card.Text>Last Updated :{toLocalDate(props.task.task_updated)}</Card.Text>
-        {!props.task.task_status &&
-           <Button variant="success" className="m-1" onClick={setTaskCompleted}>
-           Completed
-         </Button>
-        }
-       
+        <Card.Text>
+          Created On :{toLocalDate(props.task.task_created)}
+        </Card.Text>
+        <Card.Text>
+          Last Updated :{toLocalDate(props.task.task_updated)}
+        </Card.Text>
+        {!props.task.task_status && (
+          <Button variant="success" className="m-1" onClick={setTaskCompleted}>
+            Completed
+          </Button>
+        )}
+
         <Button
           variant="warning"
           className="m-1"
@@ -73,7 +86,7 @@ function TaskCard(props) {
         onHide={() => setUpdateModalShow(false)}
       />
 
-<Modal show={showPopup} onHide={handlePopupClose}>
+      <Modal show={showPopup} onHide={handlePopupClose}>
         <Modal.Header closeButton>
           <Modal.Title>Delete Task</Modal.Title>
         </Modal.Header>
@@ -87,6 +100,12 @@ function TaskCard(props) {
           </Button>
         </Modal.Footer>
       </Modal>
+      <ErrorModal
+        show={show}
+        handleClose={handleClose}
+        body="Error Occured Please Try again later"
+        title={title}
+      ></ErrorModal>
     </Card>
   );
 }
