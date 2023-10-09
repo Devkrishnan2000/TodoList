@@ -24,10 +24,10 @@ class UserSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError(
                 "first name can only contain alphabets"
             )
-        if not re.match(name_regexp, attrs.get("last_name")):
-            raise serializers.ValidationError(
-                "last name can only contain alphabets"
-            )
+        # if not re.match(name_regexp, attrs.get("last_name")):
+        #     raise serializers.ValidationError(
+        #         "last name can only contain alphabets"
+        #     )
         return super().validate(attrs)    
 
 class UserTaskViewSerializer(serializers.ModelSerializer):
@@ -51,5 +51,10 @@ class UserLoginSerializer(serializers.ModelSerializer):
         model = User
         fields = ["username","password"]
         ordering = ["id"]
+
+class GoogleAuthSerializer(serializers.Serializer):
+    cred_token = serializers.CharField();
+        
+            
             
     

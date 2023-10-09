@@ -7,7 +7,11 @@ export const axiosApi = axios.create({
 
 axiosApi.interceptors.request.use(
   function (config) {
-    if (config.url === "user/register/" || config.url === "user/login/"  ) {
+    if (
+      config.url === "user/register/" ||
+      config.url === "user/login/" ||
+      config.url === "user/login-google/"
+    ) {
       // no need auth header for registration
       config.headers["Accept"] = `application/json`;
       config.headers["Content-Type"] = `application/x-www-form-urlencoded`;

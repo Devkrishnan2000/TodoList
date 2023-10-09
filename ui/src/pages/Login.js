@@ -2,10 +2,11 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { login } from "../util/apiCalls";
+import { login, loginWithGoogle } from "../util/apiCalls";
 import { Container, Card, InputGroup } from "react-bootstrap";
 import { Eye, EyeSlash } from "react-bootstrap-icons";
 import ErrorModal from "../components/ErrorModal";
+import { GoogleLogin } from '@react-oauth/google';
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -35,6 +36,18 @@ function Login() {
       handleShow();
     }
   };
+  const authenicateGoogleUser =async (response) =>{
+    console.log(response);
+    const cred={
+      cred_token : response.credential
+    }
+    const loginSucess = await loginWithGoogle(cred);
+    if(loginSucess)
+    {
+      localStorage.setItem("loggedIn", "1"); // sets user is logged in
+      navigate("/home");
+    }
+  }
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -46,6 +59,10 @@ function Login() {
       authenicateUser();
     }
     setValidated(true);
+  };
+
+  const errorMessage = (error) => {
+    console.log(error);
   };
   return (
     <Container className="w-25">
@@ -100,6 +117,7 @@ function Login() {
               </Form.Control.Feedback>
             </InputGroup>
           </Form.Group>
+
           <Button
             variant="primary"
             className="d-block mb-2 text-light"
@@ -107,6 +125,7 @@ function Login() {
           >
             Submit
           </Button>
+          <GoogleLogin onSuccess={authenicateGoogleUser} onError={errorMessage} />
           <Link to="/register">New ? Create an Account</Link>
         </Form>
       </Card>

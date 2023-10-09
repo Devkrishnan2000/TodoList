@@ -35,7 +35,7 @@ function TodoNav() {
   };
   const setName = async () => {
     const userdetails = await getUserDetails();
-    setUsername(userdetails.data.first_name + " " + userdetails.data.last_name);
+    setUsername(userdetails.data.first_name);
   };
   return (
     <div>

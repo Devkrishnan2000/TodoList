@@ -161,6 +161,23 @@ export async function login(userCredentials) {
     });
   return status;
 }
+
+export async function loginWithGoogle(credToken)
+{
+  let status;
+  await axiosApi
+    .post("user/login-google/", credToken)
+    .then((result) => {
+      localStorage.setItem("refresh_token", result.data.refresh);
+      sessionStorage.setItem("access_token", result.data.access);
+      status = true;
+    })
+    .catch(function (error) {
+      status = false;
+      console.log(error);
+    });
+  return status;
+}
 export async function createUser(userdata) {
   let status;
   let data;
